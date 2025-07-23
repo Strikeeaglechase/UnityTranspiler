@@ -1,0 +1,21 @@
+{
+	"name": "unity-transpiler",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"type": "module",
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"archiver": "^7.0.1",
+		"uuid": "^11.1.0",
+		"vtol-live-viewer-shared": "^1.0.3"
+	},
+	"devDependencies": {
+		"@types/archiver": "^6.0.3"
+	}
+}

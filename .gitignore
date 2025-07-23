@@ -1,3 +1,9 @@
+graphs.json
+output.vtgr
+*.vts
+state.json
+typeCache.json
+old/
 # Logs
 logs
 *.log
