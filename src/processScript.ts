@@ -44,7 +44,7 @@ const rewrites: { find: string | string[]; replace: string; if?: string | string
 
 	// Misc
 	// { find: "Physics.gravity", replace: "(new Vector3(0, 9.8f, 0))" },
-	{ find: "Application.dataPath", replace: `"${outDir}"` },
+	{ find: "Application.dataPath", replace: `GameEngine.dataPath` },
 	{ find: "Application.Quit();", replace: "GameEngine.instance.Quit();" },
 	{ find: "Object.Destroy", replace: "GameObject.Destroy" },
 	{ find: "UnityEngine.Object", replace: "GameObject" },
