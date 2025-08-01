@@ -1,4 +1,4 @@
-import { assert } from "../../index.js";
+import { assert } from "../../utils.js";
 import { BaseComponent, ComponentType, Quaternion, RawComponent, Vector3 } from "./baseComponent.js";
 import { PrefabInstanceComponent } from "./prefabInstanceComponent.js";
 

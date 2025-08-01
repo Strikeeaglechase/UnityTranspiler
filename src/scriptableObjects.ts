@@ -2,9 +2,10 @@ import fs from "fs";
 import path from "path";
 
 import { appNamespace, outDir, unityProjPath, usings } from "./config.js";
-import { cleanName, createDir, findFiles, scriptGuidsMap } from "./index.js";
+import { createDir, findFiles, scriptGuidsMap } from "./index.js";
 import { MonoBehaviourComponent } from "./prefab/components/scriptComponent.js";
 import { extractComponentChunks } from "./prefab/prefab.js";
+import { cleanName } from "./utils.js";
 
 interface ScriptableObject {
 	name: string;

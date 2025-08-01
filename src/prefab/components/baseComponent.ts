@@ -1,4 +1,4 @@
-import { assert } from "../../index.js";
+import { assert } from "../../utils.js";
 import { Prefab } from "../prefab.js";
 import { GameObjectComponent } from "./gameObjectComponent.js";
 import { PrefabInstanceComponent } from "./prefabInstanceComponent.js";

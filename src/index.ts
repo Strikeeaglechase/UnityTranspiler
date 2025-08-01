@@ -35,39 +35,10 @@ export function createDir(filePath: string) {
 	});
 }
 
-export function cleanName(name: string) {
-	name = name.replaceAll("-", "_").replaceAll(" ", "_");
-	return name[0].toUpperCase() + name.slice(1);
-}
-
-export function assert(condition: boolean, message: string): asserts condition {
-	if (!condition) {
-		throw new Error(message);
-	}
-}
-
 export let scriptGuidsMap: Record<string, ScriptData> = {};
 export let prefabFileIdMap: Record<string, Prefab> = {};
 export let prefabGuidsMap: Record<string, Prefab> = {};
 export let scriptableObjectGuidsMap: Record<string, ScriptableObject> = {};
-
-function recursivelyCopyFiles(src: string, dest: string) {
-	if (!fs.existsSync(dest)) {
-		fs.mkdirSync(dest, { recursive: true });
-	}
-
-	const files = fs.readdirSync(src);
-	files.forEach(file => {
-		const srcPath = path.join(src, file);
-		const destPath = path.join(dest, file);
-
-		if (fs.statSync(srcPath).isDirectory()) {
-			recursivelyCopyFiles(srcPath, destPath);
-		} else {
-			fs.copyFileSync(srcPath, destPath);
-		}
-	});
-}
 
 function transpile() {
 	scriptGuidsMap = {};
@@ -103,7 +74,7 @@ function transpile() {
 	const scenes = loadScenePrefabs();
 	writePrefabs(scenes);
 
-	recursivelyCopyFiles(unityProjPath + "/Assets/Resources", outDir + "/Resources");
+	// recursivelyCopyFiles(unityProjPath + "/Assets/Resources", outDir + "/Resources");
 
 	console.log(
 		`Transpilation complete. ${scriptPaths.length} scripts, ${prefabs.length} prefabs, ${scriptableObjects.length} scriptable objects, ${scenes.length} scene prefabs.`
@@ -126,4 +97,4 @@ function setupWatch() {
 	});
 }
 
-if (watch) setupWatch();
+if (watch && !process.argv.includes("--no-watch")) setupWatch();

@@ -2,8 +2,9 @@ import fs from "fs";
 import path from "path";
 
 import { appNamespace, outDir, unityProjPath, usings } from "../config.js";
-import { cleanName, createDir, findFiles } from "../index.js";
+import { createDir, findFiles } from "../index.js";
 import { ScriptData } from "../processScript.js";
+import { cleanName } from "../utils.js";
 import { Component, ComponentType, componentTypeToMap, RawComponent } from "./components/baseComponent.js";
 import { GameObjectComponent } from "./components/gameObjectComponent.js";
 import { PrefabInstanceComponent } from "./components/prefabInstanceComponent.js";

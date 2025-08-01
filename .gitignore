@@ -4,6 +4,7 @@ output.vtgr
 state.json
 typeCache.json
 old/
+build
 # Logs
 logs
 *.log
