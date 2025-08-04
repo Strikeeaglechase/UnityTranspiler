@@ -41,7 +41,7 @@ fs.readdirSync(mapFilesPath).forEach(file => {
 
 // Copy AIPProvider
 const aipImplementationPath = "C:/Users/strik/Desktop/Programs/CSharp/AIPLoader";
-const targetFiles = ["AIPProvider.csproj", "AIPProvider.sln", "onBuild.bat", "readme.md"];
+const targetFiles = ["AIPProvider.csproj", "AIPProvider.sln", "onBuild.bat", "rapidValueTesting.bat", "readme.md"];
 const aipProviderDir = path.join(outputDir, "AIPProvider");
 fs.mkdirSync(aipProviderDir);
 targetFiles.forEach(file => {
@@ -56,3 +56,8 @@ const hcPath = "C:/Users/strik/Desktop/Programs/Typescript/VTOLLiveViewer/VTOLLi
 const hcOutPath = path.join(outputDir, "HeadlessClient");
 fs.mkdirSync(hcOutPath);
 recursivelyCopyFiles(hcPath, hcOutPath);
+
+// Copy readmes
+fs.copyFileSync(path.join(aipImplementationPath, "readme.md"), path.join(outputDir, "aipProvider-readme.md"));
+fs.copyFileSync(path.join(aipSimPath, "readme.md"), path.join(outputDir, "aipSim-readme.md"));
+fs.copyFileSync(path.join(aipSimPath, "gameinfo.md"), path.join(outputDir, "gameinfo.md"));
