@@ -1,3 +1,4 @@
+// NOTE: Type cache seems not to be invalidating on file change correctly. Possibly due to moving file to new path?
 import { execSync } from "child_process";
 import crypto from "crypto";
 import fs from "fs";
@@ -9,7 +10,7 @@ interface CachedTypeData {
 	types: TypeData[];
 }
 
-const cachePath = "../../typeCache.json";
+const cachePath = "../typeCache.json";
 
 function loadCache() {
 	if (!fs.existsSync(cachePath)) return [];

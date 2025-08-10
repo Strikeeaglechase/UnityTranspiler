@@ -123,10 +123,10 @@ export class PrefabInstanceComponent extends BaseComponent {
 					}
 
 					const typeData = getScriptTypeWithBase(targetComp.codeType);
-					if (!typeData) return fallback;
+					if (!typeData) return fallback + `, no type data found for ${targetComp.codeType}`;
 
 					const propType = typeData.fields.find(f => f.name == modPath);
-					if (!propType) return fallback;
+					if (!propType) return fallback + `, no property type found for ${modPath} in ${targetComp.codeType}`;
 
 					return `${targetRef}.${modPath} = ${parseValue(prefab, mod.value, propType.type)}; // ${propType.type} type`;
 				}

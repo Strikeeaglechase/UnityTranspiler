@@ -5,6 +5,9 @@ state.json
 typeCache.json
 old/
 build
+builds
+build.zip
+
 # Logs
 logs
 *.log

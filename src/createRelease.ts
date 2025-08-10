@@ -41,7 +41,7 @@ fs.readdirSync(mapFilesPath).forEach(file => {
 
 // Copy AIPProvider
 const aipImplementationPath = "C:/Users/strik/Desktop/Programs/CSharp/AIPLoader";
-const targetFiles = ["AIPProvider.csproj", "AIPProvider.sln", "onBuild.bat", "rapidValueTesting.bat", "readme.md"];
+const targetFiles = ["AIPProvider.csproj", "AIPProvider.sln", "onBuild.bat", "rapidValueTesting.bat", "readme.md", "simConfig.json", "rvtSimConfig.json"];
 const aipProviderDir = path.join(outputDir, "AIPProvider");
 fs.mkdirSync(aipProviderDir);
 targetFiles.forEach(file => {
